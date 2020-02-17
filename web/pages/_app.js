@@ -36,9 +36,27 @@ class App extends BaseApp {
       if (config && pageProps) {
         pageProps.config = config
       }
-
       return {pageProps}
     })
+  }
+
+  handleAnchorClick (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+
+  componentDidMount () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', this.handleAnchorClick);
+    });
+  }
+
+  componentWillUnmount () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.removeEventListener('click', this.handleAnchorClick);
+    });
   }
 
   render () {

@@ -5,6 +5,7 @@ import Head from 'next/head'
 import {LogoJsonLd} from 'next-seo'
 import Header from './Header'
 import Footer from './Footer'
+import SiteConfigContext from './SiteConfigContext'
 
 function Layout (props) {
   const {config, children} = props
@@ -14,7 +15,7 @@ function Layout (props) {
     return <div>Missing config</div>
   }
 
-  const {title, mainNavigation, footerNavigation, footerText, logo, url} = config
+  const {title, mainNavigation, footerNavigation, footerText, logo, url, ticketmasterUrl} = config
   const logoUrl = logo && logo.asset && logo.asset.url
 
   return (
@@ -23,8 +24,12 @@ function Layout (props) {
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
       </Head>
       <div className='container'>
-        <Header title={title} navItems={mainNavigation} logo={logo} />
-        <div className='content'>{children}</div>
+        <Header title={title} navItems={mainNavigation} logo={logo} ticketUrl={ticketmasterUrl} />
+        <div className='content'>
+          <SiteConfigContext.Provider value={{logo: logo, ticketUrl: ticketmasterUrl}} logo={logo}>
+            {children}
+          </SiteConfigContext.Provider>
+        </div>
         <Footer navItems={footerNavigation} text={footerText} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}
       </div>
@@ -44,7 +49,8 @@ Layout.propTypes = {
         url: PropTypes.string
       })
     }),
-    url: PropTypes.string
+    url: PropTypes.string,
+    ticketmasterUrl: PropTypes.string
   })
 }
 

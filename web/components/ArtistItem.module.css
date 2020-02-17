@@ -1,0 +1,25 @@
+.root {
+  background-color: red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  height: 18rem;
+  object-fit: cover;
+}
+
+.name {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  width: 94%;
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  line-height: 2.7rem;
+  font-weight: 800;
+  background: rgb(142,216,248);
+  background: linear-gradient(0deg, rgba(1,54,69,0.9) 40%, rgba(1,54,69,0) 100%);
+  padding: 2rem 0.75rem 0.6rem 0.75rem;
+}

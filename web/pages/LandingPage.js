@@ -14,13 +14,24 @@ const pageQuery = groq`
     ...,
     content[] {
       ...,
+      "navn": title,
       cta {
         ...,
         route->
       },
+      artistLink {
+        ...,
+        artist->
+      },
       ctas[] {
         ...,
         route->
+      },
+      artistList[]->{
+        ...
+      },
+      anchorLinks[]->{
+        ...
       }
     }
   }
@@ -66,6 +77,12 @@ class LandingPage extends Component {
               ctas[] {
                 ...,
                 route->
+              },
+              artistList[]->{
+                ...
+              },
+              anchorLinks[]->{
+                ...
               }
             }
           }

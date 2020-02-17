@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
 import styles from './Header.module.css'
+import sharedStyles from '../styles/shared.module.css'
 import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {
@@ -68,12 +69,13 @@ class Header extends Component {
   }
 
   render () {
-    const {title = 'Missing title', navItems, router, logo} = this.props
+    const {title = 'Missing title', navItems, router, logo, ticketUrl} = this.props
     const {showNav} = this.state
 
     return (
       <div className={styles.root} data-show-nav={showNav}>
-        <h1 className={styles.branding}>
+        <h1 className={sharedStyles.srOnly}>{title}</h1>
+        <div className={`${styles.branding} ${router.query.slug === '/' && sharedStyles.mobileOnly}`}>
           <Link
             href={{
               pathname: '/LandingPage',
@@ -86,7 +88,7 @@ class Header extends Component {
           >
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
-        </h1>
+        </div>
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             {navItems &&
@@ -101,7 +103,7 @@ class Header extends Component {
                         pathname: '/LandingPage',
                         query: {slug: slug.current}
                       }}
-                      as={`/${slug.current}`}
+                      as={`${slug.current === '/' ? '' : '/'}${slug.current}`}
                       prefetch
                     >
                       <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
@@ -109,6 +111,9 @@ class Header extends Component {
                   </li>
                 )
               })}
+            <li key={'ticketUrlKey'} className={styles.navItem}>
+              <a href={ticketUrl}>Tickets</a>
+            </li>
           </ul>
           <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
             <HamburgerIcon className={styles.hamburgerIcon} />

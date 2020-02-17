@@ -20,6 +20,12 @@ export default {
       description: 'The main site url. Used to create canonical url',
     },
     {
+      title: 'Ticketmaster URL',
+      name: 'ticketmasterUrl',
+      type: 'url',
+      description: 'URL for Ticketmaster. Used in call-action buttons/links'
+    },
+    {
       name: 'frontpage',
       type: 'reference',
       description: 'Choose page to be the frontpage',

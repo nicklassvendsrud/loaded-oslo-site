@@ -22,14 +22,15 @@ export default {
       },
     },
     {
-      name: 'ctas',
+      name: 'anchorLinks',
       type: 'array',
-      title: 'Call to actions',
+      title: 'Anchor links',
       of: [
         {
-          title: 'Call to action',
-          type: 'cta',
-        },
+          type: 'reference',
+          title: 'Artist',
+          to: [{type: 'artist'}]
+        }
       ],
     },
   ],

@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import page from './documents/page';
 import route from './documents/route';
 import siteConfig from './documents/siteConfig';
+import artist from './documents/artist';
 
 // Object types
 import cta from './objects/cta';
@@ -23,6 +24,8 @@ import hero from './objects/hero';
 import imageSection from './objects/imageSection';
 import mailchimp from './objects/mailchimp';
 import textSection from './objects/textSection';
+import eventSection from './objects/eventSection';
+import artistAnchorLink from './objects/artistAnchorLink';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -43,6 +46,9 @@ export default createSchema({
     route,
     simplePortableText,
     siteConfig,
+    artist,
     textSection,
+    eventSection,
+    artistAnchorLink
   ]),
 });
