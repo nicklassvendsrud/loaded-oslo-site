@@ -102,7 +102,8 @@
 
 .ticketsCta {
   color: #000;
-  background-color: #ffc164;
+  /* background-color: #ffc164; */
+  background-color: var(--color-loaded-blue);
   text-decoration: none;
   padding: 1.5rem 1.66rem 1.66rem 1.5rem;
   font-weight: 800;
@@ -165,56 +166,56 @@
 }
 
 .logo {
-width: 100%;
-margin: 0 auto;
-max-width: calc(var(--width-small) - 5em);
+  width: 100%;
+  margin: 0 auto;
+  max-width: calc(var(--width-small) - 5em);
 
-@nest & svg path, & svg polygon, & svg rect {
-fill: var(--color-loaded-blue);
-}
+  @nest & svg path, & svg polygon, & svg rect {
+    fill: var(--color-loaded-blue);
+  }
 }
 
 .ctas {
-margin-top: 3rem;
-display: flex;
+  margin-top: 3rem;
+  display: flex;
 }
 
 .ctas > *:not(:first-child) {
-margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .root p a {
-color: inherit;
+  color: inherit;
 }
 
 .artist_list_area {
-margin-top: 3rem;
-margin-left: auto;
-margin-right: auto;
-display: flex;
-max-width: var(--width-medium);
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  max-width: var(--width-medium);
 }
 
 .artist_list {
-list-style-type: none;
-padding: 0;
-margin: 0 auto;
-text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .artist_list_item {
-display: inline-block;
-margin-right: 1rem;
-color: var(--color-white);
-text-transform: uppercase;
-font-weight: 600;
-font-size: 2.75rem;
-line-height: 2.45rem
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.75rem;
+  line-height: 2.45rem
 }
 
 .artist_list_item:nth-of-type(1), .artist_list_item:nth-of-type(2) {
-font-size: 4rem;
-line-height: 4rem;
+  font-size: 4rem;
+  line-height: 4rem;
 }
 
 .artist_list_item:nth-of-type(2),
@@ -222,10 +223,21 @@ line-height: 4rem;
 .artist_list_item:nth-of-type(6),
 .artist_list_item:nth-of-type(8),
 .artist_list_item:nth-of-type(10) {
-color: var(--color-loaded-blue);
+  color: var(--color-loaded-blue);
 }
 
 .artist_list_item a {
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ticketmasterLogo {
+  display: block;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+
+  @nest & svg {
+    width: 10rem;
+    height: 2rem;
+  }
 }

@@ -12,6 +12,7 @@ import SiteConfigContext from '../SiteConfigContext'
 import WaivesSvg from '../../assets/waives.svg'
 import DigitLogoSvg from '../../assets/youDigItLogo.svg'
 import SaltLogoSvg from '../../assets/salt-logo.svg'
+import TicketLogoSvg from '../../assets/ticketmasterLogo.svg'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -80,6 +81,9 @@ function Hero (props) {
                 </ul>
               </div>
             )}
+            <a href={value.ticketUrl} className={styles.ticketmasterLogo}>
+              <TicketLogoSvg />
+            </a>
           </div>
         </div>
       }
