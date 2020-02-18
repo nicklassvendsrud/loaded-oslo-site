@@ -53,7 +53,7 @@
 .modal_inner {
   margin: 0 auto;
   width: 100%;
-  max-width: var(--width-medium);
+  max-width: var(--width-large);
   box-sizing: border-box;
   background-color: var(--color-loaded-blue);
   color: var(--color-black);
