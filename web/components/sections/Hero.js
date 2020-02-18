@@ -63,6 +63,12 @@ function Hero (props) {
             <div className={`${styles.logo} ${sharedStyles.desktopOnly}`}>{renderLogo(value.logo)}</div>
             <h2 className={styles.title}>{heading}</h2>
             <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
+            {value.ticketUrl &&
+            <a href={value.ticketUrl} className={styles.ticketsCta}>
+              <span className={styles.ticketsCta_span}>BUY YOUR</span>
+              <span className={styles.ticketsCta_span}>TICKETS HERE</span>
+            </a>
+            }
             {anchorLinks && (
               <div className={styles.artist_list_area}>
                 <ul className={styles.artist_list}>

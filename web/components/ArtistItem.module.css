@@ -1,11 +1,31 @@
+@import '../styles/custom-media.css';
+
 .root {
-  background-color: red;
+  background-color: rgb(1,54,69);
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+.modal_trigger {
+  apperance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: unset;
+  width: 100%;
+  box-sizing: unset;
+  text-align: unset;
+  font: unset;
+  background-color: transparent;
+  cursor: pointer;
+  outline-offset: 2px;
+  outline-color: var(--color-loaded-blue);
+}
+
 .image {
+  width: 100%;
   height: 18rem;
   object-fit: cover;
 }
@@ -14,7 +34,7 @@
   position: absolute;
   bottom: 0;
   display: inline-block;
-  width: 94%;
+  width: 100%;
   text-transform: uppercase;
   font-size: 2.7rem;
   line-height: 2.7rem;
@@ -22,4 +42,105 @@
   background: rgb(142,216,248);
   background: linear-gradient(0deg, rgba(1,54,69,0.9) 40%, rgba(1,54,69,0) 100%);
   padding: 2rem 0.75rem 0.6rem 0.75rem;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.modal__closed {
+  opacity: 0;
+}
+
+.modal_inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--width-medium);
+  box-sizing: border-box;
+  background-color: var(--color-loaded-blue);
+  color: var(--color-black);
+  padding: 1rem;
+
+  @media (--media-min-large) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+  }
+}
+
+.modal__open {
+  opacity: 1;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.modal_leftCol {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+  position: relative;
+
+  @media (--media-min-large) {
+    width: 49%;
+  }
+}
+
+.modal_rightCol {
+  width: 100%;
+  @media (--media-min-large) {
+    width: 48%;
+  }
+}
+
+.modal_inner button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal_image {
+  width: 100%;
+  height: auto;
+
+  @media (--media-min-large) {
+    height: 22rem;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+.modal_name {
+  display: inline-block;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  line-height: 2.7rem;
+  font-weight: 800;
+  word-break: break-word;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  color: #FFF;
+  background: rgb(142,216,248);
+  background: linear-gradient(0deg, rgba(1,54,69,0.9) 40%, rgba(1,54,69,0) 100%);
+  box-sizing: border-box;
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+}
+
+.modal_closeBtn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  background-color: transparent;
+  border: none;
+  font-size: var(--font-small-size);
+  padding: 1rem;
 }

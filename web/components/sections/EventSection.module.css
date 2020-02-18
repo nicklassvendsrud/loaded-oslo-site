@@ -4,9 +4,9 @@
 .root {
   padding: 2rem 0;
 
-@media (--media-min-medium) {
-  padding: 4rem 0;
-}
+  @media (--media-min-medium) {
+    padding: 4rem 0;
+  }
 }
 
 .article {
@@ -26,8 +26,8 @@
 }
 
 .heading {
-  font-size: var(--font-title3-size);
-  line-height: var(--font-title3-line-height);
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
 }
 
 .label+.heading {
@@ -44,6 +44,16 @@
 }
 
 .artist_item_wrapper {
-  width: 32%;
+  width: 100%;
   overflow: hidden;
+  margin-bottom: 0.666rem; /* THE NUMBER OF THE BEAST */
+  @media (--media-min-large) {
+    width: 32%;
+  }
+}
+
+.artist_item_wrapper:first-of-type {
+  @media (--media-min-large) {
+    width: 66%;
+  }
 }
