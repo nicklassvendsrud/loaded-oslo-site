@@ -89,7 +89,6 @@
   overflow: hidden;
   flex-wrap: wrap;
   position: relative;
-  overflow-y: scroll;
 
   @media (--media-min-large) {
     width: 49%;
