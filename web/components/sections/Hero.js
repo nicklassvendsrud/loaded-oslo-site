@@ -11,7 +11,6 @@ import ArtistAnchorLink from '../ArtistAnchorLink'
 import SiteConfigContext from '../SiteConfigContext'
 import WaivesSvg from '../../assets/waives.svg'
 import DigitLogoSvg from '../../assets/youDigItLogo.svg'
-import SaltLogoSvg from '../../assets/salt-logo.svg'
 import TicketLogoSvg from '../../assets/ticketmasterLogo.svg'
 
 function urlFor (source) {
@@ -57,9 +56,6 @@ function Hero (props) {
           <div className={styles.content}>
             <a href={'http://livestation.no/'} className={styles.partnerLink}>
               <DigitLogoSvg className={styles.digitLogo} />
-            </a>
-            <a href={'https://www.salted.no/'} className={styles.partnerLink}>
-              <SaltLogoSvg className={styles.saltLogo} />
             </a>
             <div className={`${styles.logo} ${sharedStyles.desktopOnly}`}>{renderLogo(value.logo)}</div>
             <h2 className={styles.title}>{heading}</h2>

@@ -135,7 +135,7 @@
   outline: 1px solid #FFF;
 }
 
-.digitLogo, .saltLogo {
+.digitLogo {
   width: 35%;
   height: 3em;
 
@@ -152,16 +152,6 @@
 
   @media (--media-min-large) {
     top: 3.5em;
-  }
-}
-
-.saltLogo {
-  right: 5%;
-  float: right;
-
-  @media (--media-min-large) {
-    float: none;
-    height: 4.2em;
   }
 }
 
