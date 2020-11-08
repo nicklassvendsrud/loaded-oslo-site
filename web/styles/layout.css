@@ -1,14 +1,14 @@
 @import './custom-properties.css';
 
 html {
-  font-family: var(--font-family-roboto);
+  font-family: var(--font-family-source);
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  background: #000;
+  background: var(--color-dark-gray);
   color: var(--color-white);
   margin: 0;
 }
@@ -26,4 +26,8 @@ body,
 
 * {
   outline-color: var(--color-loaded-blue);
+}
+
+p a {
+  color: var(--color-white);
 }

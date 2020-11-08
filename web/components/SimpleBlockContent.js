@@ -8,7 +8,6 @@ const {projectId, dataset} = client.config()
 
 function SimpleBlockContent (props) {
   const {blocks} = props
-  console.log(blocks)
   if (!blocks) {
     console.error('Missing blocks')
     return null

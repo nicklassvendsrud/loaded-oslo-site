@@ -90,7 +90,7 @@ class Header extends Component {
           </Link>
         </div>
         <nav className={styles.nav}>
-          <ul className={styles.navItems}>
+          <ul className={router.query.slug === '/' ? `${styles.navItems} ${styles.navItemsHome}` : `${styles.navItems}`}>
             {navItems &&
               navItems.map(item => {
                 const {slug, title, _id} = item

@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 :root {
   --wide-container: 60rem;
   --narrow-container: 40rem;
 
   --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-family-roboto: 'Roboto Condensed', sans-serif;
+  --font-family-source: 'Source Code Pro', monospace;;
 
-  --color-black: #202123;
-  --color-dark-gray: #32373e;
+  --color-black: #231F20;
+  --color-dark-gray: #4D4D4F;
   --color-gray: #697a90;
-  --color-light-gray: #b4bcc7;
+  --color-light-gray: #F1F2F2;;
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
   --color-accent: #156dff;
-  --color-loaded-blue: #8ED8F8;
+  --color-loaded-blue: #A1B7D9;
+  --color-loaded-green: #ABCEA6;
+  --color-loaded-pink: #E7C6CC;
 
   /* Typography */
   --unit: 16;

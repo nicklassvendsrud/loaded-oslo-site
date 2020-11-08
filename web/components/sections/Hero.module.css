@@ -1,13 +1,11 @@
 @import '../../styles/custom-media.css';
 @import '../../styles/custom-properties.css';
-@import './stars-animation.css';
 
 .root {
   composes: center from '../../styles/shared.module.css';
   position: relative;
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,54,69,1) 85%);
-  color: var(--color-white, #fff);
+  background: #F1F2F2;
+  color: var(--color-black);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -17,7 +15,7 @@
 
   @media (--media-min-medium) {
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 0;
   }
 }
 
@@ -39,23 +37,6 @@
   box-sizing: border-box;
   z-index: 1;
   position: relative;
-}
-
-.stars_container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-}
-
-.bg_waives_container {
-  width: 100%;
-  position: absolute;
-  bottom: -7px;
-  opacity: 0.5;
 }
 
 .title {
@@ -83,7 +64,6 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   text-align: center;
   pointer-events: none;
-  font-weight: 800;
 
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);
@@ -101,9 +81,8 @@
 }
 
 .ticketsCta {
-  color: #000;
-  /* background-color: #ffc164; */
-  background-color: var(--color-loaded-blue);
+  color: var(--color-dark-gray);
+  background-color: var(--color-loaded-green);
   text-decoration: none;
   padding: 1.5rem 1.66rem 1.66rem 1.5rem;
   font-weight: 800;
@@ -116,14 +95,9 @@
   @media (--media-min-large) {
     position: absolute;
     right: 8%;
-    transform: rotate(10deg);
     border-radius: 50%;
-    margin-top: -6rem;
-    padding: 1.5rem 1.66rem 1.66rem 1.5rem;
-
-    @nest &:hover {
-      background-color: var(--color-loaded-blue);
-    }
+    margin-top: -13rem;
+    padding: 2rem 1rem 1.8rem 1rem;
   }
 }
 
@@ -188,32 +162,46 @@
 
 .artist_list {
   list-style-type: none;
-  padding: 0;
   margin: 0 auto;
+  padding: 0;
   text-align: center;
+
+  @media (--media-min-large) {
+    border-left: 2px solid var(--color-black);
+    border-right: 2px solid var(--color-black);
+    padding: 1.8rem 0.5rem 2.2rem 0.5rem;
+
+    &:before {
+      content: '';
+      width: 96%;
+      height: 1px;
+      position: relative;
+      left: 0;
+      top: -1rem;
+      display: inline-block;
+      border-bottom: 2px solid var(--color-black);
+    }
+    &:after {
+       content: '';
+       width: 96%;
+       height: 1px;
+       position: relative;
+       left: 0;
+       bottom: -1rem;
+       display: inline-block;
+       border-bottom: 2px solid var(--color-black);
+     }
+  }
 }
 
 .artist_list_item {
   display: inline-block;
+  margin-left: 1rem;
   margin-right: 1rem;
-  color: var(--color-white);
   text-transform: uppercase;
-  font-weight: 600;
   font-size: 2.75rem;
-  line-height: 2.45rem
-}
-
-.artist_list_item:nth-of-type(1), .artist_list_item:nth-of-type(2) {
-  font-size: 4rem;
-  line-height: 4rem;
-}
-
-.artist_list_item:nth-of-type(2),
-.artist_list_item:nth-of-type(3),
-.artist_list_item:nth-of-type(6),
-.artist_list_item:nth-of-type(8),
-.artist_list_item:nth-of-type(10) {
-  color: var(--color-loaded-blue);
+  line-height: 2.45rem;
+  color: var(--color-black);
 }
 
 .artist_list_item a {
@@ -230,4 +218,22 @@
     width: 10rem;
     height: 2rem;
   }
+}
+
+.bottomWaves {
+  width: 108vw;
+  position: relative;
+  left: -10rem;
+  margin-top: 1rem;
+  height: 14rem;
+  overflow: hidden;
+  display: none;
+
+  @media (--media-min-large) {
+    display: block;
+  }
+}
+
+.bottomWaves svg {
+  width: 100%;
 }

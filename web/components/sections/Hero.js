@@ -3,15 +3,13 @@ import PropTypes from 'prop-types'
 import imageUrlBuilder from '@sanity/image-url'
 import SVG from 'react-inlinesvg'
 import styles from './Hero.module.css'
-import starsAnimStyles from './stars-animation.css'
-import sharedStyles from '../../styles/shared.module.css'
 import client from '../../client'
 import SimpleBlockContent from '../SimpleBlockContent'
 import ArtistAnchorLink from '../ArtistAnchorLink'
 import SiteConfigContext from '../SiteConfigContext'
-import WaivesSvg from '../../assets/waives.svg'
 import DigitLogoSvg from '../../assets/youDigItLogo.svg'
 import TicketLogoSvg from '../../assets/ticketmasterLogo.svg'
+import WavesSvg from '../../assets/waves.svg'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -19,7 +17,6 @@ function urlFor (source) {
 
 function Hero (props) {
   const {heading, backgroundImage, tagline, anchorLinks} = props
-  console.log(backgroundImage)
 
   const style = (backgroundImage && backgroundImage.asset)
     ? {
@@ -45,25 +42,18 @@ function Hero (props) {
     <SiteConfigContext.Consumer>
       {value =>
         <div className={styles.root} style={style}>
-          <div className={styles.stars_container}>
-            <div className={starsAnimStyles.stars1}></div>
-            <div className={starsAnimStyles.stars2}></div>
-            <div className={starsAnimStyles.stars3}></div>
-          </div>
-          <div className={styles.bg_waives_container}>
-            <WaivesSvg />
-          </div>
           <div className={styles.content}>
             <a href={'http://livestation.no/'} className={styles.partnerLink}>
               <DigitLogoSvg className={styles.digitLogo} />
             </a>
-            <div className={`${styles.logo} ${sharedStyles.desktopOnly}`}>{renderLogo(value.logo)}</div>
+            <div className={styles.logo}>{renderLogo(value.logo)}</div>
             <h2 className={styles.title}>{heading}</h2>
             <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
             {value.ticketUrl &&
             <a href={value.ticketUrl} className={styles.ticketsCta}>
               <span className={styles.ticketsCta_span}>BUY YOUR</span>
-              <span className={styles.ticketsCta_span}>TICKETS HERE</span>
+              <span className={styles.ticketsCta_span}>TICKETS</span>
+              <span className={styles.ticketsCta_span}>HERE</span>
             </a>
             }
             {anchorLinks && (
@@ -80,6 +70,9 @@ function Hero (props) {
             <a href={value.ticketUrl} className={styles.ticketmasterLogo}>
               <TicketLogoSvg />
             </a>
+            <div className={styles.bottomWaves}>
+              <WavesSvg />
+            </div>
           </div>
         </div>
       }

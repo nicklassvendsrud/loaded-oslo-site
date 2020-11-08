@@ -4,11 +4,17 @@
 
 .root {
   position: relative;
-  /* color: var(--color-black, #000); */
-  color: #FFF;
+  color: var(--color-black, #000);
   display: flex;
   margin: 0 auto;
   max-width: var(--width-large);
+  z-index: 2;
+  background-color: var(--color-light-gray);
+
+  @media (--media-min-medium) {
+    margin-bottom: -5.5rem;
+    background-color: transparent;
+  }
 }
 
 .root a {
@@ -62,6 +68,7 @@
   padding: 0;
   margin: 0;
   text-transform: uppercase;
+  color: var(--color-light-gray);
 
   @media (--media-min-medium) {
     display: flex;
@@ -81,11 +88,16 @@
     top: 100%;
     width: 100%;
     background-color: var(--color-black, #000);
-    color: var(--color-white, #fff);
 
     @nest .root[data-show-nav="true"] & {
       display: block;
     }
+  }
+}
+
+.navItemsHome {
+  @media (--media-min-medium) {
+    color: var(--color-dark-gray);
   }
 }
 

@@ -40,7 +40,7 @@
   line-height: 2.7rem;
   font-weight: 800;
   background: rgb(142,216,248);
-  background: linear-gradient(0deg, rgba(1,54,69,0.9) 40%, rgba(1,54,69,0) 100%);
+  background: linear-gradient(0deg, rgba(30,30,30,0.9) 40%, rgba(30,30,30,0) 100%);
   padding: 2rem 0.75rem 0.6rem 0.75rem;
   word-break: break-word;
   box-sizing: border-box;

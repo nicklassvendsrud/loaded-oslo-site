@@ -5,7 +5,6 @@ import ArtistItem from '../ArtistItem'
 
 const EventSection = (props) => {
   const {title, artistList} = props;
-  console.log(props);
   return (
     <div className={styles.root}>
       <section className={styles.article}>

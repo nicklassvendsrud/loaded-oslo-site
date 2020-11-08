@@ -3,10 +3,19 @@
 
 .root {
   padding: 2rem 0;
+  background-color: var(--color-loaded-blue);
 
   @media (--media-min-medium) {
     padding: 4rem 0;
   }
+}
+
+.root:nth-of-type(3) {
+  background-color: var(--color-loaded-pink);
+}
+
+.root:nth-of-type(4) {
+  background-color: var(--color-loaded-green);
 }
 
 .article {
@@ -28,6 +37,7 @@
 .heading {
   font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height);
+  color: var(--color-dark-gray);
 }
 
 .label+.heading {
