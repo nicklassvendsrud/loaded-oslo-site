@@ -26,8 +26,8 @@ export default class MyDocument extends Document {
             fbq('track', 'PageView');`}}
           />
           <noscript>
-            <img height='1' width='1' style='display:none'
-              src='https://www.facebook.com/tr?id=9fql9y2oj3h422rs2yjlmcd77f9glv&ev=PageView&noscript=1' />
+            <img height={'1'} width={'1'} style={{display: 'none'}} alt={''}
+              src={'https://www.facebook.com/tr?id=9fql9y2oj3h422rs2yjlmcd77f9glv&ev=PageView&noscript=1'} />
           </noscript>
         </Head>
         <body>
