@@ -14,6 +14,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang={this.props.lang || 'en'}>
         <Head>
+          <script async src='https://www.googletagmanager.com/gtag/js?id=AW-670324958' />
+          <script dangerouslySetInnerHTML={{__html: ` window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-670324958'); `}}
+          />
           <script dangerouslySetInnerHTML={{__html: `!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
